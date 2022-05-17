@@ -6,9 +6,7 @@ var start = document.getElementById("start");
 
 function startQuiz() {
   var startScreen = document.getElementById("start-screen");
-  startScreen.setAttribute("class", "hide");
-
-  questions.removeAttribute("class");
+  startScreen.setAttribute("class", ".hide");
 
   time = setInterval(clockTick, 1000);
 }
