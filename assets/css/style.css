@@ -1,4 +1,5 @@
 * {
+  background-color: lightgrey;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -7,33 +8,88 @@
 .hide {
   display: none;
 }
+.container {
+  position: absolute;
+  margin: 20px;
+  padding: 20px;
+  width: 500px;
+}
+.quiz-box {
+  text-align: center;
+  position: absolute;
+  top: 30%;
+  left: 18%;
+  width: 500px;
+}
 
-/*CONTAINER*/
+.quiz {
+  margin: auto;
+}
+.quiz-box h1 {
+  border: 1px solid black;
+  margin: 20px;
+  color: black;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
 
-/*.questions*/
+.quiz-box p {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  margin: 20px;
+  border: 2px solid black;
+  font-size: large;
+  background-color: lightsalmon;
+}
 
-/*current time*/
+.btn {
+  margin: 5px;
+  padding: 8px;
+  border-style: double;
+  border-color: black;
+  background-color: lightcoral;
+  border-radius: 8px;
+}
 
-/*back*/
+.btn start {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 
-/*clear*/
+  font-weight: bolder;
+}
 
-/*button*/
+.questions {
+  text-align: center;
+  position: absolute;
+  top: 30%;
+  left: 18%;
+  width: 500px;
+}
+.questions h1 {
+  border: 1px solid black;
+  margin: 20px;
+  color: black;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
 
-/*textarea*/
-
-/*submit*/
-
-/*label*/
-
-/*input*/
-
-/*h1*/
-
-/*li*/
-
-/*create Div*/
-
-/*media query max width 786*/
-
-/*media query max width 640*/
+.current-time {
+  float: right;
+  padding-top: 2px;
+  padding-right: 7px;
+  color: black;
+  border: 1px solid black;
+  background-color: coral;
+}
+.back {
+  margin: 5px;
+  padding: 8px;
+  border-style: double;
+  border-color: black;
+  background-color: lightcoral;
+  border-radius: 8p;
+}
+.clear {
+  margin: 5px;
+  padding: 8px;
+  border-style: double;
+  border-color: black;
+  background-color: lightcoral;
+  border-radius: 8p;
+}

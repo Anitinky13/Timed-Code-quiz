@@ -1,11 +1,7 @@
 var buttonEl = document.querySelector("#start");
-console.log(buttonEl);
-var buttonEl = document.querySelector("#start");
-
-buttonEl.addEventListener("click", function () {
+choice.forEvery(function (newQuestion) {
   var listItem = document.createElement("li");
-  listItem.textContent = "New Question";
-  question.appendChild(ulCreate);
-  ulCreate.appendChild(listItem);
+  listItem.textContent = newQuestion;
+  questions.appendChild(listItem);
   listItem.addEventListener("click", compare);
 });
