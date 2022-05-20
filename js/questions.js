@@ -1,4 +1,5 @@
 //Array of Objects=questions
+//each question object need a question value, a choices,array choices,answer value
 var myQuestions = [
   {
     question: "Commonly used data types Do Not include:",
@@ -35,7 +36,12 @@ var myQuestions = [
     correctAnswer: "Console Log",
   },
 ];
-//each question object need a question value, a choices,array choices,answer value
+var question = document.getElementById("question");
+var time = document.getElementById("time");
+var choices = document.getElementById("choice");
+var submit = document.getElementById("submit");
+var start = document.getElementById("start");
+
 //loop through the array
 //variable that holds the index number of the current question array that your on
 //hardcore the 4 choices button in the html
