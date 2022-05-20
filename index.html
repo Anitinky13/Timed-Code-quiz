@@ -13,30 +13,36 @@
 </head>
 
 <body>
-    <a href="HighScores.html">HighScore</a>
+    <nav class="navigation">
+        <a href="HighScores.html">HighScore</a>
+        <section class="timer">Time Remaining</section>
+    </nav>
 
     <div id="container" class="container">
-        <div class="quiz-box">
-            <div id="quiz">
+        <section class="quiz-box">
+            <div id="quizz">
 
-                <h1>Coding Quiz Challenge</h1>
-                <p>Please answer the following questions. Remember this quiz is timed amd incorrect answers will result
-                    in
-                    penalty to your score and time by ten seconds!</p>
-                <button class="btn" id="start">Start Quiz</button>
+
 
             </div>
+            <h1>Coding Quiz Challenge</h1>
+            <p>Please answer the following questions. Remember this quiz is timed amd incorrect answers will result
+                in
+                penalty to your score and time by ten seconds!</p>
+            <button class="btn" id="startQuiz">Start Quiz</button>
+
+    </div>
 
 
-            <div id="quizz" class="hide">
-                <h2 id="question-title"></h2>
-                <div id="choices" class="choices">
-                </div>
+    <div id="quizz" class="hide">
+        <h2 id="question-title"></h2>
+        <div id="choices" class="choices">
+        </div>
 
-            </div>
+    </div>
 
-            <script src="./js/HighScore.js"></script>
-            <script src="./js/questions.js"></script>
+    <script src="./js/HighScore.js"></script>
+    <script src="./js/questions.js"></script>
 </body>
 
 </html>
