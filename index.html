@@ -1,48 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!--to make it responsive on other screens-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--Title-->
-    <title>Coding Quiz Challenge</title>
-    <!--Style-->
-    <link rel="stylesheet" href="./assets/css/style.css">
-</head>
-
 <body>
-    <nav class="navigation">
-        <a href="HighScores.html">HighScore</a>
-        <section class="timer">Time Remaining</section>
-    </nav>
+    <div class="container">
+        <nav>
+            <a href="HighScore.html">High Score</a>
+        </nav>
+        <div class="quizBox">
+            <div id="Quiz">
+                <h1>Coding Quiz Challenge</h1>
 
-    <div id="container" class="container">
-        <section class="quiz-box">
-            <div id="quizz">
-
-
+                <p>Please answer the following questions. <span>Remember</span> this quiz is timed.</p>
+                <p>Incorrect answers will result in penalty to your score and time by ten seconds!</p>
+                <button class="btn" id="start">Start Quiz</button>
+                </button>
 
             </div>
-            <h1>Coding Quiz Challenge</h1>
-            <p>Please answer the following questions. Remember this quiz is timed amd incorrect answers will result
-                in
-                penalty to your score and time by ten seconds!</p>
-            <button class="btn" id="startQuiz">Start Quiz</button>
+            <p id="question"></p>
+            <div class="buttons">
+                <button class="btn" id="btn0">
+                    1. <span id="choice"> </span>
+                </button>
+                <button class="btn" id="btn0">
+                    2. <span id="choice"> </span>
+                </button>
+                <button class="btn" id="btn0">
+                    3. <span id="choice"> </span>
+                </button>
+                <button class="btn" id="btn0">
+                    4. <span id="choice"> </span>
+                </button>
 
-    </div>
+            </div>
+            <hr>
+            <footer> </footer>
 
 
-    <div id="quizz" class="hide">
-        <h2 id="question-title"></h2>
-        <div id="choices" class="choices">
         </div>
 
+        <script src="js/HighScore.js"></script>
     </div>
 
-    <script src="./js/HighScore.js"></script>
-    <script src="./js/questions.js"></script>
 </body>
 
 </html>

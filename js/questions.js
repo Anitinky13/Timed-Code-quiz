@@ -1,27 +1,23 @@
-var quizContainer = document.querySelector("#quizz");
-var start = document.querySelector("#startQuiz");
-var quizContainer = document.querySelector("#container");
-var currentTime = document.querySelector("#time");
-var questionsEl = document.querySelector("#questions");
-
+//index of current question
+var indexQuestion = 0;
+start.addEventListener("click", function () {
+  alert("button clicked");
+});
+document.getElementById("start").addEventListener("click", myFunction);
 //Array of Objects=questions
-//each question object need a question value, a choices,array choices,answer value
 var myQuestions = [
   {
-    number: 1,
     question: "Commonly used data types Do Not include:",
 
     choice: ["Strings", "Booleans", "Alerts", "Numbers"],
     correctAnswer: "Alerts",
   },
   {
-    number: 2,
     question: "The condition in an if/else statement is enclosed within___.",
     choice: ["Quotes", "Curly Brackets", "Parenthesis", "Square Brackets"],
     correctAnswer: "Parenthesis",
   },
   {
-    number: 3,
     question: "Arrays in Javascript can be used to store____.",
     choice: [
       "Number and Strings",
@@ -32,7 +28,6 @@ var myQuestions = [
     correctAnswer: "All Of The Above",
   },
   {
-    number: 4,
     question:
       "String values must be enclosed within___ when being assigned to variables.",
     choice: ["Commas", "Curly Brackets", "Quotes", "Parenthesis"],
@@ -40,20 +35,29 @@ var myQuestions = [
   },
 
   {
-    number: 5,
     question:
       "A very useful tool for used during development and debugging for printing content to the debugger is:",
     choice: ["Javascript", "Terminal/Bash", "For Loops", "Console Log"],
     correctAnswer: "Console Log",
   },
 ];
-//variables
-var startBtn = document.querySelector(".btn");
 
-//for each question
+//for the next question and choices to display
+function nextQuestion() {
+  document.body.innerHTML = "";
+  ++questionIndex;
+  document.write(myQuestions[questionIndex].ques + "<br />");
+}
 
-//variable to store the list of possible answers
+for (var j = o; j < myQuestions[questionIndex].choices.length; j++) {
+  document.write(
+    "<input type=radio id=myRadio name=radAnswer>" +
+      myQuestions[questionIndex].choices[j] +
+      "<br/>"
+  );
+}
 
+//each question object need a question value, a choices,array choices,answer value
 //loop through the array
 //variable that holds the index number of the current question array that your on
 //hardcore the 4 choices button in the html
