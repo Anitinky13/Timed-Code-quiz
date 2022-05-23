@@ -36,10 +36,6 @@ var myQuestions = [
   },
 ];
 
-//variable for questions?
-var choices = [];
-var answer;
-
 //create a variable for timer(use querySelector?) not local
 var currentTime = 0;
 var handleButtonClick = function (event) {
@@ -104,24 +100,20 @@ var displayNextQuestion = function () {
     console.log("gameOver");
   }
 };
-//i think we need a results and initial variable?
+var quizBody = document.getElementById("quiz");
+var quizTimer = document.getElementById("timer");
+var timeLeft = 76;
+var timerInterval;
+timerInterval = setInterval(function () {
+  timeLeft--;
+  quizTimer.textContent = "Time left: " + timeLeft;
 
-var results;
-var initialBox;
-
-//probably need a highscore variable... do i put it here or on second js?
-
-var highScores;
-//clear score?
-
-//Go back button variable?
-var backBtn;
-
-//variable for answers? do we need?
-var answers;
-
-//function startQuiz()
-//start.addEventListener("click", startQuiz);
+  if (timeLeft === 0) {
+    clearInterval(timerInterval);
+    showScore();
+  }
+}, 1000);
+quizBody.style.display = "block";
 
 //loop through the array( I need help!!!)
 for (var i = 0; i < myQuestions.length; i++) {
@@ -141,6 +133,6 @@ document.getElementById("start").addEventListener("click", startQuiz);
 //then set the text contents of the buttons in that loop
 //have a hardcore spot for the question
 
-//work on timer---- how to set timer efunction?
+//work on timer---- how to set timer function?
 
 //work on highscores

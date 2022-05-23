@@ -14,18 +14,25 @@
     <div class="container">
         <nav>
             <a href="HighScore.html">High Score</a>
+
+
+
         </nav>
+        <div id="timer">Time left: </div>
+
         <div class="quizBox">
-            <div id="Quiz">
+            <div id="Quiz" class="show">
                 <div id="startQuiz">
                     <h1>Coding Quiz Challenge</h1>
 
                     <p>Please answer the following questions. <span>Remember</span> this quiz is timed.</p>
                     <p>Incorrect answers will result in penalty to your score and time by ten seconds!</p>
+                    <ul id="Quiz"></ul>
                     <button class="btn" id="start">Start Quiz</button>
                     </button>
 
                 </div>
+                <div id="currentTime"></div>
                 <p id="question"></p>
                 <h1 id="currentScore"></h1>
                 <div class="buttons">

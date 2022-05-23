@@ -1,0 +1,31 @@
+* {
+  background-color: #fffaff;
+  background-position: center;
+  margin: 2px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+/* navigation style*/
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.quizBox {
+  padding: 20px;
+  border-style: solid;
+  border-radius: 15px;
+  color: blue;
+  font-size: large;
+  font-style: oblique;
+}
+.quizBox p {
+  color: black;
+}
+.btn {
+  background-color: bisque;
+  border-style: double;
+  border-color: blue;
+  font-size: medium;
+}
