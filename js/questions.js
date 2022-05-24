@@ -4,6 +4,7 @@ var answer;
 var questionText = document.getElementById("question");
 var score = 0;
 var index = 0;
+var submit = document.getElementById("submit");
 
 var quizBody = document.getElementById("Quiz");
 var quizTimer = document.getElementById("timer");
@@ -119,6 +120,7 @@ var displayNextQuestion = function () {
     console.log("gameOver");
   }
 };
+
 //i think we need a results and initial variable?
 
 var results;
@@ -141,8 +143,6 @@ for (var i = 0; i < myQuestions.length; i++) {
 }
 document.getElementById("start").addEventListener("click", startQuiz);
 
-createSubmit.addEventListener("click", function () {
+document.getElementById("submit").addEventListener("click", function () {
   var initials = creatInput.value;
 });
-//work on highscores
-window.location.replace("./HighScore.html");
