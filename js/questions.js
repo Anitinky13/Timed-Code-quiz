@@ -1,9 +1,7 @@
-
-//Array of Objects=questions
+//Array of Objects=questions( i think i got it?)
 var myQuestions = [
   {
     question: "Commonly used data types Do Not include:",
-
     choice: ["Strings", "Booleans", "Alerts", "Numbers"],
     correctAnswer: "Alerts",
   },
@@ -28,7 +26,6 @@ var myQuestions = [
     choice: ["Commas", "Curly Brackets", "Quotes", "Parenthesis"],
     correctAnswer: "Quotes",
   },
-
   {
     question:
       "A very useful tool for used during development and debugging for printing content to the debugger is:",
@@ -37,7 +34,11 @@ var myQuestions = [
   },
 ];
 
-//create a variable for timer
+//variable for questions?
+var choices = [];
+var answer;
+
+//create a variable for timer(use querySelector?) not local
 var currentTime = 0;
 var handleButtonClick = function (event) {
   console.log("Hello There");
@@ -52,7 +53,7 @@ var handleButtonClick = function (event) {
   }
   displayNextQuestion();
 };
-// variable for buttons
+//need to get variable for buttons(use querySelector?) not local
 var Buttons;
 var scoreText = document.getElementById("currentScore");
 var Btn1 = document.getElementById("btn0");
@@ -67,34 +68,11 @@ Btn4.addEventListener("click", handleButtonClick);
 var questionText = document.getElementById("question");
 var score = 0;
 var index = 0;
-
-//timer
-var quizBody = document.getElementById("quiz");
-var quizTimer = document.getElementById("timer");
-var timeLeft = 76;
-var timerInterval;
-timerInterval = setInterval;
-  timeLeft--;
-  quizTimer.textContent = "Time left: " + timeLeft;
-  if (timeLeft <= 0) {
-  clearInterval(holdInterval);
-  gameover()
-  currentTime.textContent = "Times Out!";
-  showScore();
-}
-}
-1000;
-quizBody.style.display = "block";
 //start quiz variable
-
 var startQuiz = function () {
-  
-
   index = 0;
   score = 0;
-
   scoreText.textContent = `score: ${score}`;
-
   questionText.textContent = myQuestions[index].question;
   Btn1.textContent = myQuestions[index].choice[0];
   Btn2.textContent = myQuestions[index].choice[1];
@@ -105,12 +83,10 @@ var startQuiz = function () {
   Btn4.textContent = myQuestions[index].choice[3];
   Btn4.value = myQuestions[index].choice[3];
 };
-//next questions to show variable
 var displayNextQuestion = function () {
   if (index < myQuestions.length - 1) {
     index++;
     scoreText.textContent = `score: ${score}`;
-
     questionText.textContent = myQuestions[index].question;
     Btn1.textContent = myQuestions[index].choice[0];
     Btn2.textContent = myQuestions[index].choice[1];
@@ -121,59 +97,56 @@ var displayNextQuestion = function () {
     Btn4.textContent = myQuestions[index].choice[3];
     Btn4.value = myQuestions[index].choice[3];
   } else {
-   
+    console.log("gameOver");
+  }
 };
-//timer function and variable
+//i think we need a results and initial variable?
 
-//loop through the array
+var results;
+var initialBox;
+
+//probably need a highscore variable... do i put it here or on second js?
+
+var highScores;
+//clear score?
+
+//Go back button variable?
+var backBtn;
+
+//variable for answers? do we need?
+var answers;
+
+//function startQuiz()
+//start.addEventListener("click", startQuiz);
+var quizBody = document.getElementById("quiz");
+var quizTimer = document.getElementById("timer");
+var timeLeft = 76;
+var timerInterval;
+timerInterval = setInterval(function () {
+  timeLeft--;
+  quizTimer.textContent = "Time left: " + timeLeft;
+
+  if (timeLeft === 0) {
+    clearInterval(timerInterval);
+    showScore();
+  }
+}, 1000);
+quizBody.style.display = "block";
+
+//loop through the array( I need help!!!)
 for (var i = 0; i < myQuestions.length; i++) {
   console.log(myQuestions[i]);
 }
 document.getElementById("start").addEventListener("click", startQuiz);
-
+//question function?
+//how do we check the answers?
+//
+//each question object need a question value, a choices,array choices,answer value
 //hardcore the 4 choices button in the html
 //then set the text contents of the buttons in that loop
 //have a hardcore spot for the question
-//HighScores
-var highScoreContainer = document.getElementById("highScoreContainer");
-var highScore = document.getElementById("highScorePage");
-var myQuestions = document.getElementById("questions");
-var inputName = document.getElementById("initials");
-var submitHighScore = document.getElementById("submit");
-var displayName = document.getElementById("highScoreInitials");
-var displayScore = document.getElementById("highScoreScore");
-var scoreText = document.getElementById(" currentScore");
-var score = 0;
-var index = 0;
-var quizBody = document.getElementById("quiz");
-var gameover = document.getElementById("gameover");
-var quizTimer = document.getElementById("timer");
-var finalScore = document.getElementById("finalHighScore");
-var submitBtn = document.getElementById("submit");
 
-//show Scores
-function showScores() {
-  quizBody.style.display = "none";
-  gameover.style.display = "flex";
-  clearInterval(timerInterval);
-  displayName.value = "";
-  finalScore.innerHTML =
-    "You got " + score + " out of " + myQuestions.length + " correct!";
-}
-var createP = document.createElement("p");
-createP.setAttribute("id", "createP");
-myQuestions.appendChild("creatP");
-if (timeLeft >= 0) {
-  var timeRem = timeLeft;
-  var createP2 = document.createElement("p");
-  clearInterval(holdInterval);
-  createP.textContent = "Your score is: " + timeRem;
+//work on timer---- how to set timer efunction?
+//work on timer---- how to set timer function?
 
-  myQuestions.appendChild(createP2);
-}
-//need a function to generate score
-
-function generateScore() {
-  displayName.innerHTML = "";
-  displayScore.innerHTML = "";
-}
+//work on highscores
