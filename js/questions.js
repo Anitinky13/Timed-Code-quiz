@@ -82,6 +82,7 @@ timerInterval = setInterval;
   currentTime.textContent = "Times Out!";
   showScore();
 }
+}
 1000;
 quizBody.style.display = "block";
 //start quiz variable
