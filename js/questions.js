@@ -1,4 +1,4 @@
-//Array of Objects=questions( i think i got it?)
+//Array of Objects=questions
 var myQuestions = [
   {
     question: "Commonly used data types Do Not include:",
@@ -36,7 +36,7 @@ var myQuestions = [
   },
 ];
 
-//create a variable for timer(use querySelector?) not local
+//create a variable for timer
 var currentTime = 0;
 var handleButtonClick = function (event) {
   console.log("Hello There");
@@ -51,7 +51,7 @@ var handleButtonClick = function (event) {
   }
   displayNextQuestion();
 };
-//need to get variable for buttons(use querySelector?) not local
+// variable for buttons
 var Buttons;
 var scoreText = document.getElementById("currentScore");
 var Btn1 = document.getElementById("btn0");
@@ -82,6 +82,7 @@ var startQuiz = function () {
   Btn4.textContent = myQuestions[index].choice[3];
   Btn4.value = myQuestions[index].choice[3];
 };
+//next questions to show variable
 var displayNextQuestion = function () {
   if (index < myQuestions.length - 1) {
     index++;
@@ -100,6 +101,7 @@ var displayNextQuestion = function () {
     console.log("gameOver");
   }
 };
+//timer function and variable
 var quizBody = document.getElementById("quiz");
 var quizTimer = document.getElementById("timer");
 var timeLeft = 76;
@@ -115,24 +117,12 @@ timerInterval = setInterval(function () {
 }, 1000);
 quizBody.style.display = "block";
 
-//loop through the array( I need help!!!)
+//loop through the array
 for (var i = 0; i < myQuestions.length; i++) {
   console.log(myQuestions[i]);
 }
 document.getElementById("start").addEventListener("click", startQuiz);
 
-//question function?
-
-//how do we check the answers?
-
-//
-
-//each question object need a question value, a choices,array choices,answer value
-
 //hardcore the 4 choices button in the html
 //then set the text contents of the buttons in that loop
 //have a hardcore spot for the question
-
-//work on timer---- how to set timer function?
-
-//work on highscores

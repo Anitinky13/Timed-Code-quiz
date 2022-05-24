@@ -29,3 +29,49 @@
   border-color: blue;
   font-size: medium;
 }
+
+/*highscore*/
+#initials {
+  padding: 15px;
+  margin: 12px;
+  background-color: bisque;
+  border-style: double;
+  border-color: blue;
+  font-size: medium;
+}
+#submit {
+  padding: 15px;
+  margin: 12px;
+  background-color: bisque;
+  border-style: double;
+  border-color: blue;
+  font-size: medium;
+}
+#clear {
+  padding: 15px;
+  margin: 12px;
+  background-color: bisque;
+  border-style: double;
+  border-color: blue;
+  font-size: medium;
+}
+#back {
+  padding: 15px;
+  margin: 12px;
+  background-color: bisque;
+  border-style: double;
+  border-color: blue;
+  font-size: medium;
+}
+
+#questions h1 {
+  font-size: 35pt;
+  font-style: oblique;
+  color: blue;
+}
+#gameover {
+  border-style: double;
+  padding: 10px;
+  font-size: large;
+  color: blue;
+}
