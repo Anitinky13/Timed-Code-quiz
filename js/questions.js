@@ -118,7 +118,7 @@ var answers;
 
 //function startQuiz()
 //start.addEventListener("click", startQuiz);
-var quizBody = document.getElementById("quiz");
+var quizBody = document.getElementById("Quiz");
 var quizTimer = document.getElementById("timer");
 var timeLeft = 76;
 var timerInterval;
