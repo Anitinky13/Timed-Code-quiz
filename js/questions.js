@@ -1,3 +1,4 @@
+
 //Array of Objects=questions
 var myQuestions = [
   {
@@ -66,10 +67,31 @@ Btn4.addEventListener("click", handleButtonClick);
 var questionText = document.getElementById("question");
 var score = 0;
 var index = 0;
+
+//timer
+var quizBody = document.getElementById("quiz");
+var quizTimer = document.getElementById("timer");
+var timeLeft = 76;
+var timerInterval;
+timerInterval = setInterval;
+  timeLeft--;
+  quizTimer.textContent = "Time left: " + timeLeft;
+  if (timeLeft <= 0) {
+  clearInterval(holdInterval);
+  gameover()
+  currentTime.textContent = "Times Out!";
+  showScore();
+}
+1000;
+quizBody.style.display = "block";
 //start quiz variable
+
 var startQuiz = function () {
+  
+
   index = 0;
   score = 0;
+
   scoreText.textContent = `score: ${score}`;
 
   questionText.textContent = myQuestions[index].question;
@@ -98,24 +120,9 @@ var displayNextQuestion = function () {
     Btn4.textContent = myQuestions[index].choice[3];
     Btn4.value = myQuestions[index].choice[3];
   } else {
-    console.log("gameOver");
-  }
+   
 };
 //timer function and variable
-var quizBody = document.getElementById("quiz");
-var quizTimer = document.getElementById("timer");
-var timeLeft = 76;
-var timerInterval;
-timerInterval = setInterval(function () {
-  timeLeft--;
-  quizTimer.textContent = "Time left: " + timeLeft;
-
-  if (timeLeft === 0) {
-    clearInterval(timerInterval);
-    showScore();
-  }
-}, 1000);
-quizBody.style.display = "block";
 
 //loop through the array
 for (var i = 0; i < myQuestions.length; i++) {
@@ -126,3 +133,46 @@ document.getElementById("start").addEventListener("click", startQuiz);
 //hardcore the 4 choices button in the html
 //then set the text contents of the buttons in that loop
 //have a hardcore spot for the question
+//HighScores
+var highScoreContainer = document.getElementById("highScoreContainer");
+var highScore = document.getElementById("highScorePage");
+var myQuestions = document.getElementById("questions");
+var inputName = document.getElementById("initials");
+var submitHighScore = document.getElementById("submit");
+var displayName = document.getElementById("highScoreInitials");
+var displayScore = document.getElementById("highScoreScore");
+var scoreText = document.getElementById(" currentScore");
+var score = 0;
+var index = 0;
+var quizBody = document.getElementById("quiz");
+var gameover = document.getElementById("gameover");
+var quizTimer = document.getElementById("timer");
+var finalScore = document.getElementById("finalHighScore");
+var submitBtn = document.getElementById("submit");
+
+//show Scores
+function showScores() {
+  quizBody.style.display = "none";
+  gameover.style.display = "flex";
+  clearInterval(timerInterval);
+  displayName.value = "";
+  finalScore.innerHTML =
+    "You got " + score + " out of " + myQuestions.length + " correct!";
+}
+var createP = document.createElement("p");
+createP.setAttribute("id", "createP");
+myQuestions.appendChild("creatP");
+if (timeLeft >= 0) {
+  var timeRem = timeLeft;
+  var createP2 = document.createElement("p");
+  clearInterval(holdInterval);
+  createP.textContent = "Your score is: " + timeRem;
+
+  myQuestions.appendChild(createP2);
+}
+//need a function to generate score
+
+function generateScore() {
+  displayName.innerHTML = "";
+  displayScore.innerHTML = "";
+}
