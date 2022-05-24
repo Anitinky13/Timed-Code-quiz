@@ -140,15 +140,9 @@ for (var i = 0; i < myQuestions.length; i++) {
   console.log(myQuestions[i]);
 }
 document.getElementById("start").addEventListener("click", startQuiz);
-//question function?
-//how do we check the answers?
-//
-//each question object need a question value, a choices,array choices,answer value
-//hardcore the 4 choices button in the html
-//then set the text contents of the buttons in that loop
-//have a hardcore spot for the question
 
-//work on timer---- how to set timer efunction?
-//work on timer---- how to set timer function?
-
+createSubmit.addEventListener("click", function () {
+  var initials = creatInput.value;
+});
 //work on highscores
+window.location.replace("./HighScore.html");
