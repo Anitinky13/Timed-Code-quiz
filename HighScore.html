@@ -10,18 +10,30 @@
 </head>
 
 <body>
-    <div class="container">
-        <div id="time" class="current-time"></div>
-        <div id="questions" class="questions">
-            <h1>High Scores</h1>
+    <div class="container" div id="highScoreContainer">
+        <div id="highScorePage">
+            <div id="highScoreHeader">
+                <h2>initials</h2>
+                <h2>Score</h2>
+            </div>
+            <div id="time" class="current-time"></div>
+            <div id="questions" class="questions">
+                <h1>High Scores</h1>
 
-            <ul id="HighScore"></ul>
-            <button id="back">Back to Start</button>
-            <button id="clear" value="reset">Clear Scores</button>
+                <div id="gameover">
+                    <div id="finalHighScore"></div>
+                    <input type="text" size="35" placeholder="Please enter your initials for get your high score"
+                        name="initials" id="initials" />
+                    <button id="submit">Submit High Score</button>
+                </div>
+
+                <ul id="HighScore"></ul>
+                <button id="back">Back to Start</button>
+                <button id="clear" onclick="clearScores()">Clear Scores</button>
+            </div>
+
         </div>
-
-    </div>
-    <script src="HighScore.js"></script>
+        <script src="HighScore.js"></script>
 </body>
 
 </html>
