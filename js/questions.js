@@ -1,3 +1,28 @@
+//variable for questions?
+var choices = [];
+var answer;
+var questionText = document.getElementById("question");
+var score = 0;
+var index = 0;
+
+var quizBody = document.getElementById("Quiz");
+var quizTimer = document.getElementById("timer");
+var timeLeft = 76;
+var timerInterval;
+
+var timerInterval = setInterval(function () {
+  timeLeft--;
+  quizTimer.textContent = "Time left: " + timeLeft;
+
+  if (timeLeft === 0) {
+    clearInterval(timerInterval);
+    showScore();
+  }
+}, 1000);
+quizBody.style.display = "block";
+//function startQuiz()
+start.addEventListener("click", startQuiz);
+
 //Array of Objects=questions( i think i got it?)
 var myQuestions = [
   {
@@ -34,10 +59,6 @@ var myQuestions = [
   },
 ];
 
-//variable for questions?
-var choices = [];
-var answer;
-
 //create a variable for timer(use querySelector?) not local
 var currentTime = 0;
 var handleButtonClick = function (event) {
@@ -65,9 +86,7 @@ Btn3.addEventListener("click", handleButtonClick);
 var Btn4 = document.getElementById("btn3");
 Btn4.addEventListener("click", handleButtonClick);
 //index of current question
-var questionText = document.getElementById("question");
-var score = 0;
-var index = 0;
+
 //start quiz variable
 var startQuiz = function () {
   index = 0;
@@ -115,23 +134,6 @@ var backBtn;
 
 //variable for answers? do we need?
 var answers;
-
-//function startQuiz()
-//start.addEventListener("click", startQuiz);
-var quizBody = document.getElementById("Quiz");
-var quizTimer = document.getElementById("timer");
-var timeLeft = 76;
-var timerInterval;
-timerInterval = setInterval(function () {
-  timeLeft--;
-  quizTimer.textContent = "Time left: " + timeLeft;
-
-  if (timeLeft === 0) {
-    clearInterval(timerInterval);
-    showScore();
-  }
-}, 1000);
-quizBody.style.display = "block";
 
 //loop through the array( I need help!!!)
 for (var i = 0; i < myQuestions.length; i++) {
