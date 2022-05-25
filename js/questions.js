@@ -146,3 +146,8 @@ document.getElementById("start").addEventListener("click", startQuiz);
 document.getElementById("submit").addEventListener("click", function () {
   var initials = creatInput.value;
 });
+
+function answeredIncorrectly() {
+  timeLeft -= 10;
+  console.log("answered incorectly");
+}

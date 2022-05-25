@@ -7,10 +7,11 @@ clear.addEventListener("click", function () {
   localStorage.clear();
   location.reload();
 });
-var scoresAll = localStorage.getItem("scoresAll");
-scoresAll = JSON.parse(scoresAll);
+var loadHighScoreData = function () {
+  highScores = JSON.parse(localStorage.getItem("highscores") || "[]");
+};
 
-if (scoresAll !== null) {
+if (highScores !== null) {
   for (var i = 0; i < scoresAll.length; i++) {
     var createLi = document.createElement("li");
     createLi.textContent = scoresAll[i].initials + " " + scoresAll[i].score;
