@@ -5,21 +5,30 @@ var questionText = document.getElementById("question");
 var score = 0;
 var index = 0;
 var submit = document.getElementById("submit");
+var initials = "";
 
 var quizBody = document.getElementById("Quiz");
 var quizTimer = document.getElementById("timer");
 var timeLeft = 76;
 var timerInterval;
 
-var timerInterval = setInterval(function () {
-  timeLeft--;
-  quizTimer.textContent = "Time left: " + timeLeft;
+function countDown() {
+  setInterval(function () {
+    timeLeft--;
+    quizTimer.textContent = "Time left: " + timeLeft;
+
+    if (timeLeft === 0) {
+      clearInterval(timerInterval);
+    }
+  }, 1000);
 
   if (timeLeft === 0) {
-    clearInterval(timerInterval);
-    showScore();
+    alert("Times up!");
+  } else {
   }
-}, 1000);
+}
+
+//var timerInterval =
 quizBody.style.display = "block";
 //function startQuiz()
 start.addEventListener("click", startQuiz);
@@ -63,15 +72,18 @@ var myQuestions = [
 //create a variable for timer(use querySelector?) not local
 var currentTime = 0;
 var handleButtonClick = function (event) {
-  console.log("Hello There");
   var btnValue = event.target.value;
   console.log(btnValue);
   if (btnValue === myQuestions[index].correctAnswer) {
     console.log("correctAnswer");
     score += 20;
     console.log(score);
+    if (score === 0) {
+      console.log(score);
+    }
   } else {
     console.log("wrongAnswer");
+    score -= 20;
   }
   displayNextQuestion();
 };
@@ -102,6 +114,7 @@ var startQuiz = function () {
   Btn3.value = myQuestions[index].choice[2];
   Btn4.textContent = myQuestions[index].choice[3];
   Btn4.value = myQuestions[index].choice[3];
+  countDown();
 };
 var displayNextQuestion = function () {
   if (index < myQuestions.length - 1) {
@@ -117,7 +130,7 @@ var displayNextQuestion = function () {
     Btn4.textContent = myQuestions[index].choice[3];
     Btn4.value = myQuestions[index].choice[3];
   } else {
-    console.log("gameOver");
+    console.log(score);
   }
 };
 
@@ -143,9 +156,10 @@ for (var i = 0; i < myQuestions.length; i++) {
 }
 document.getElementById("start").addEventListener("click", startQuiz);
 
-document.getElementById("submit").addEventListener("click", function () {
-  var initials = creatInput.value;
-});
+// document.getElementById("submit").addEventListener("click", function () {
+//   var initials = creatInput.value;
+//   console.log(initials);
+// });
 
 function answeredIncorrectly() {
   timeLeft -= 10;
