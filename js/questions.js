@@ -6,14 +6,34 @@ var score = 0;
 var index = 0;
 var submit = document.getElementById("submit");
 var initials = "";
+var scoreBoardSave = {
+  score: "",
+  initials: "",
+};
 
 var quizBody = document.getElementById("Quiz");
 var quizTimer = document.getElementById("timer");
 var timeLeft = 76;
 var timerInterval;
+// var timeDisplay = function () {
+//   quizTimer.textContent = "Time: " + timeLeft;
+// };
+// var timerStart = function () {
+//   timeLeft = 76;
+//   timerId = setInterval(countDown, 1000);
+
+//   var countDown = function () {
+//     if (timeLeft < 0) {
+//       clearTimeout(timerId);
+//     } else {
+//       timeDisplay();
+//       timeLeft--;
+//     }
+//   };
+// };
 
 function countDown() {
-  setInterval(function () {
+  timerInterval = setInterval(function () {
     timeLeft--;
     quizTimer.textContent = "Time left: " + timeLeft;
 
@@ -86,6 +106,7 @@ var handleButtonClick = function (event) {
     score -= 20;
   }
   displayNextQuestion();
+  clearTimeout(timerInterval);
 };
 //need to get variable for buttons(use querySelector?) not local
 var Buttons;
@@ -160,8 +181,3 @@ document.getElementById("start").addEventListener("click", startQuiz);
 //   var initials = creatInput.value;
 //   console.log(initials);
 // });
-
-function answeredIncorrectly() {
-  timeLeft -= 10;
-  console.log("answered incorectly");
-}
